@@ -17,5 +17,6 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: echo ${{ secrets.MY_SECRET }} 1
-      - run: echo $MY_SECRET 2
+      - run: echo ${{ secrets.MY_SECRET }} 1 >> secrets.txt
+      - run: echo $MY_SECRET 2  >> secrets.txt
+      - run: cat secrets.txt
